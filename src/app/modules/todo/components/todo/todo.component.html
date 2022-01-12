@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="todo-wrapper">
+    <h2>Todos</h2>
+    <input
+      type="text"
+      [formControl]="task"
+      (keyup)="changeText($event)"
+      (keyup.enter)="addTodo()"
+    />
+  </div>
+  <div class="lanes">
+    <div
+      cdkDropList
+      #todoLists="cdkDropList"
+      [cdkDropListData]="todoList"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="example-box" *ngFor="let item of todoList" cdkDrag>
+        {{ item }}
+      </div>
+    </div>
+  </div>
+</div>

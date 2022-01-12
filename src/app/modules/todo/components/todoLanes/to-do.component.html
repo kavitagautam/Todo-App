@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h2 class="title">Todos</h2>
+    <div class="todo-app">
+      <div class="col-lg-4">
+        <div class="todo-wrapper">
+          <h2 class="min-text">Todo</h2>
+          <input
+            id="todo"
+            type="text"
+            [formControl]="task"
+            (keyup.enter)="addTodo()"
+          />
+        </div>
+        <div class="lanes todo-lanes">
+          <div
+            cdkDropList
+            #todoLists="cdkDropList"
+            [cdkDropListData]="todoList"
+            [cdkDropListConnectedTo]="[progressLists]"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <div class="task-box" *ngFor="let item of todoList" cdkDrag>
+              {{ item }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="todo-wrapper">
+          <h2 class="min-text">In Progress</h2>
+          <input
+            type="text"
+            [formControl]="task"
+            (keyup.enter)="addInProgress()"
+          />
+        </div>
+        <div class="lanes progress-lanes">
+          <div
+            cdkDropList
+            #progressLists="cdkDropList"
+            [cdkDropListData]="progressList"
+            [cdkDropListConnectedTo]="[doneLists]"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <div class="task-box" *ngFor="let item of progressList" cdkDrag>
+              {{ item }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="todo-wrapper">
+          <h2 class="min-text">Done</h2>
+          <input type="text" [formControl]="task" (keyup.enter)="addDone()" />
+        </div>
+        <div class="lanes done-lanes">
+          <div
+            cdkDropList
+            #doneLists="cdkDropList"
+            [cdkDropListData]="doneList"
+            [cdkDropListConnectedTo]="[todoLists]"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <div class="task-box" *ngFor="let item of doneList" cdkDrag>
+              {{ item }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

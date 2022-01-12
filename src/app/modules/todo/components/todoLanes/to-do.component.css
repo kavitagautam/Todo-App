@@ -1,0 +1,61 @@
+.title {
+  padding-top: 20px;
+  font-size: 30px;
+  font-weight: 900;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.todo-app {
+  margin: 40px;
+  text-align: center;
+}
+
+.todo-wrapper {
+  border: 1px solid #c2c2c2;
+  box-shadow: 0 0 10px 0;
+}
+
+.todo-wrapper input {
+  border-radius: 3px;
+  background-color: #dae3f0 !important;
+  color: #1a2138;
+  padding: 10px 12px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  border: none;
+  width: 90%;
+}
+
+.min-text {
+  font-size: 25px;
+  padding: 10px;
+}
+
+.lanes {
+  border: 1px solid #c2c2c2;
+  box-shadow: 0 0 10px 0;
+  margin-top: 40px;
+  border-width: 6px;
+}
+
+.todo-lanes {
+  border-color: #8f2141;
+}
+
+.progress-lanes {
+  border-color: #083762;
+}
+
+.done-lanes {
+  border-color: #1f291f;
+}
+
+.task-box {
+  background-color: white;
+  border: 1px solid #c2c2c2;
+  box-shadow: 0 0 10px 0;
+  margin: 15px 20px;
+  padding: 8px 0;
+  font-size: 15px;
+}

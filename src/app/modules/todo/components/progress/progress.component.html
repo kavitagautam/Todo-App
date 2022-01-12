@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="todo-wrapper">
+    <h2>In Progress</h2>
+    <input
+      type="text"
+      [formControl]="task"
+      (keyup)="changeText($event)"
+      (keyup.enter)="addInProgress()"
+    />
+  </div>
+  <div class="lanes">
+    <div
+      cdkDropList
+      #progressLists="cdkDropList"
+      [cdkDropListData]="progressList"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="example-box" *ngFor="let item of progressList" cdkDrag>
+        {{ item }}
+      </div>
+    </div>
+  </div>
+</div>
